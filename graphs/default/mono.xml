@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="no"?>
+
+<graph>
+
+<description>
+mono .NET development framework 
+www-mono-project.com
+</description>
+
+<copyright>
+Copyright (c) 2000 - 2011 The Regents of the University of California.
+All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
+</copyright>
+
+<changelog>
+</changelog>
+
+<edge from="base">
+  <to>mono-common</to>
+</edge>
+<order head="base">
+  <tail>mono-common</tail>
+</order>
+
+<edge from="envmodules-common">
+  <to>mono-modules-common</to>
+</edge>
+<order head="envmodules-common">
+  <tail>mono-modules-common</tail>
+</order>
+
+<order head="mono-common">
+  <tail>mono-modules-common</tail>
+</order>
+
+</graph>
