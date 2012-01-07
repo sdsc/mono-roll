@@ -57,7 +57,8 @@
 
 -include $(ROLLSROOT)/etc/Rolls.mk
 
-default: roll
+default:
+	$(MAKE) roll
 
 clean::
 	rm -f _arch bootstrap.py

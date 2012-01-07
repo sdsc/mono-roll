@@ -67,7 +67,7 @@ build:
 	tar zxvf $(SOURCE).tar.gz
 	( \
 	  cd $(SOURCE); \
-          ./configure --prefix=/opt/$(NAME); \
+          ./configure --prefix=$(ROOT)/$(PKGROOT); \
           make \
 	)
 
