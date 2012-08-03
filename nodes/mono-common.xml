@@ -4,7 +4,7 @@
 
 <description>
 mono .NET development framework 
-www-mono-project.com
+www.mono-project.com
 </description>
 
 <copyright>
@@ -16,19 +16,6 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 </changelog>
 
 <package>mono</package>
-
-<post>
-
-<file name="/etc/profile.d/mono.csh" perms="0755" >
-set path = ( /opt/mono/bin $path )
-setenv LD_LIBRARY_PATH /opt/mono/lib:$LD_LIBRARY_PATH
-</file>
-
-<file name="/etc/profile.d/mono.sh" perms="0755" >
-export PATH=/opt/mono/bin:$PATH
-export LD_LIBRARY_PATH=/opt/mono/lib:$LD_LIBRARY_PATH
-</file>
-
-</post>
+<package>mono-modules</package>
 
 </kickstart>

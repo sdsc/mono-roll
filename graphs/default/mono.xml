@@ -4,7 +4,7 @@
 
 <description>
 mono .NET development framework 
-www-mono-project.com
+www.mono-project.com
 </description>
 
 <copyright>
@@ -20,17 +20,6 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 </edge>
 <order head="base">
   <tail>mono-common</tail>
-</order>
-
-<edge from="envmodules-common">
-  <to>mono-modules-common</to>
-</edge>
-<order head="envmodules-common">
-  <tail>mono-modules-common</tail>
-</order>
-
-<order head="mono-common">
-  <tail>mono-modules-common</tail>
 </order>
 
 </graph>
