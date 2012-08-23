@@ -1,3 +1,4 @@
 #%Module1.0
 prepend-path PATH /opt/mono/bin
 prepend-path LD_LIBRARY_PATH /opt/mono/lib
+prepend-path MANPATH /opt/mono/share/man
