@@ -17,9 +17,13 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 
 <edge from="base">
   <to>mono-common</to>
+  <to>mono-roll-test</to>
 </edge>
 <order head="base">
   <tail>mono-common</tail>
+</order>
+<order head="base">
+  <tail>mono-roll-test</tail>
 </order>
 
 </graph>
