@@ -64,6 +64,5 @@ default:
 
 copyright rpm pkg clean::
 	for i in $(SRCDIRS) ; do \
-            echo make $@ in $$i with ROLLCOMPILER=$$c ROLLMPI=$$m; \
            (cd $$i; $(MAKE) $@); \
 	done
