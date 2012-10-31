@@ -17,5 +17,6 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 
 <package>mono</package>
 <package>mono-modules</package>
+<package>mono-roll-test</package>
 
 </kickstart>
