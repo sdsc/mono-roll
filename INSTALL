@@ -10,4 +10,4 @@ this directory:
 % rocks run roll mono | bash
 
 In addition to the software itself, the roll installs mono environment module
-files in /opt/modulefiles/compilers/beast.
+files in /opt/modulefiles/compilers/mono.
