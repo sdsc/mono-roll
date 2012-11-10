@@ -1,3 +1,3 @@
 NAME    = mono-modules
-VERSION = 2.10.8
+VERSION = 3.0.1
 RELEASE = 1
