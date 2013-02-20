@@ -64,7 +64,7 @@ REDHAT.ROOT = $(PWD)/../../
 
 
 build:
-	tar jxvf $(SOURCE).tar.bz2
+	tar jxvf $(SOURCE).tar.gz
 	( \
 	  cd $(SOURCE); \
           ./configure --prefix=$(PKGROOT); \
