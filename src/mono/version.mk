@@ -1,3 +1,3 @@
 NAME    = mono
-VERSION = 3.0.2
-RELEASE = 0
+VERSION = 2.10.8
+RELEASE = 1
