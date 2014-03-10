@@ -2,6 +2,7 @@ NAME               = mono
 VERSION            = 3.2.6
 RELEASE            = 0
 PKGROOT            = /opt/mono
+RPM.EXTRAS         = AutoReq:No
 
 SRC_SUBDIR         = mono
 
