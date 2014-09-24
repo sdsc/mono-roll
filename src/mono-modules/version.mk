@@ -1,5 +1,9 @@
-NAME       = mono-modules
-VERSION    = 3.2.6
-RELEASE    = 0
+NAME        = mono-modules
+RELEASE     = 1
+PKGROOT     = /opt/modulefiles/compilers/mono
 
-RPM.EXTRAS = AutoReq:No
+VERSION_SRC = $(REDHAT.ROOT)/src/mono/version.mk
+VERSION_INC = version.inc
+include $(VERSION_INC)
+
+RPM.EXTRAS  = AutoReq:No
