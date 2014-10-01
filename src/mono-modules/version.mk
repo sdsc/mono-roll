@@ -1,8 +1,11 @@
-NAME        = mono-modules
-RELEASE     = 1
-PKGROOT     = /opt/modulefiles/compilers/mono
+PACKAGE     = mono
+CATEGORY    = compilers
 
-VERSION_SRC = $(REDHAT.ROOT)/src/mono/version.mk
+NAME        = $(PACKAGE)-modules
+RELEASE     = 2
+PKGROOT     = /opt/modulefiles/$(CATEGORY)/$(PACKAGE)
+
+VERSION_SRC = $(REDHAT.ROOT)/src/$(PACKAGE)/version.mk
 VERSION_INC = version.inc
 include $(VERSION_INC)
 
