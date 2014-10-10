@@ -1,5 +1,5 @@
 NAME           = mono
-VERSION        = 3.2.6
+VERSION        = 3.10.0
 RELEASE        = 0
 PKGROOT        = /opt/mono
 
