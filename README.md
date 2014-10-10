@@ -24,7 +24,7 @@ Rocks development machine.
 
 ## Dependencies
 
-Unknown at this time.
+None.
 
 
 ## Building
@@ -72,10 +72,4 @@ run the test scripts execute the following command(s):
 
 ```shell
 % /root/rolltests/mono.t 
-ok 1 - mono is installed
-ok 2 - mono test run
-ok 3 - mono module installed
-ok 4 - mono version module installed
-ok 5 - mono version module link created
-1..5
 ```
