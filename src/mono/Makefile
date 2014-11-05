@@ -74,7 +74,7 @@ DESCRIPTION:
 
 LICENSE: $(SRC_DIRS)
 	for P in 'under.the.LGPL' 'under.the.GPL' 'terms.of.the.MIT.X11' 'under.the.BSD' 'Apache.2.0'; do \
-	  if ! grep -F "$F" $(SOURCE_DIR)/LICENSE; then \
+	  if ! grep -q "$$F" $(SOURCE_DIR)/LICENSE; then \
 	    exit 2; \
 	  fi; \
 	done
