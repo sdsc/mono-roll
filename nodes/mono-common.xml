@@ -12,8 +12,8 @@ Copyright (c) 2000 - 2014 The Regents of the University of California.
 All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 </copyright>
 
-<package>mono</package>
-<package>mono-modules</package>
-<package>mono-roll-test</package>
+<package>sdsc-mono</package>
+<package>sdsc-mono-modules</package>
+<package>sdsc-mono-roll-test</package>
 
 </kickstart>

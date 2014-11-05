@@ -60,7 +60,25 @@ REDHAT.ROOT = $(CURDIR)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
 include Rules.mk
-include pull.mk
+include $(SDSCDEVEL)/Pull.mk
+include $(SDSCDEVEL)/Rules.mk
+
+LICENSE_FILES = $(SOURCE_DIR)/LICENSE $(SOURCE_DIR)/mcs/LICENSE.GPL $(SOURCE_DIR)/mcs/LICENSE.LPGL $(SOURCE_DIR)/mcs/MIT.X11
+
+$(NAME).spec: DESCRIPTION LICENSE
+
+DESCRIPTION:
+	( \
+	  $(DESCRIBE_PKG) \
+	) > $@
+
+LICENSE: $(SRC_DIRS)
+	for P in 'under.the.LGPL' 'under.the.GPL' 'terms.of.the.MIT.X11' 'under.the.BSD' 'Apache.2.0'; do \
+	  if ! grep -F "$F" $(SOURCE_DIR)/LICENSE; then \
+	    exit 2; \
+	  fi; \
+	done
+	echo -e 'LPGL and GPL and MIT and BSD and ASL 2.0' > $@
 
 build: $(SRC_DIRS)
 	( \
@@ -79,5 +97,4 @@ install::
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::
-	rm -rf $(SOURCE_DIR)
-
+	rm -rf $(SOURCE_DIR) DESCRIPTION LICENSE

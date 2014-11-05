@@ -1,6 +1,6 @@
-NAME           = mono
+NAME           = sdsc-mono
 VERSION        = 3.10.0
-RELEASE        = 0
+RELEASE        = 1
 PKGROOT        = /opt/mono
 
 SRC_SUBDIR     = mono
