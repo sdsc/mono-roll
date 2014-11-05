@@ -29,19 +29,17 @@ None.
 
 ## Building
 
-To build the mono-roll, execute these instructions on a Rocks development
+To build the mono-roll, execute this on a Rocks development
 machine (e.g., a frontend or development appliance):
 
 ```shell
-% make default 2>&1 | tee build.log
-% grep "RPM build error" build.log
+% make 2>&1 | tee build.log
 ```
 
-If nothing is returned from the grep command then the roll should have been
-created as... `mono-*.iso`. If you built the roll on a Rocks frontend then
-proceed to the installation step. If you built the roll on a Rocks development
-appliance you need to copy the roll to your Rocks frontend before continuing
-with installation.
+A successful build will create the file `mono-*.disk1.iso`.  If you built the
+roll on a Rocks frontend, proceed to the installation step. If you built the
+roll on a Rocks development appliance, you need to copy the roll to your Rocks
+frontend before continuing with installation.
 
 
 ## Installation
@@ -67,7 +65,7 @@ module files in:
 ## Testing
 
 The mono-roll includes a test script which can be run to verify proper
-installation of the mono-roll documentation, binaries and module files. To
+installation of the roll documentation, binaries and module files. To
 run the test scripts execute the following command(s):
 
 ```shell
