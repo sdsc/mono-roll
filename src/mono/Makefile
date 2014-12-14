@@ -63,8 +63,6 @@ include Rules.mk
 include $(SDSCDEVEL)/Pull.mk
 include $(SDSCDEVEL)/Rules.mk
 
-LICENSE_FILES = $(SOURCE_DIR)/LICENSE $(SOURCE_DIR)/mcs/LICENSE.GPL $(SOURCE_DIR)/mcs/LICENSE.LPGL $(SOURCE_DIR)/mcs/MIT.X11
-
 $(NAME).spec: DESCRIPTION LICENSE
 
 DESCRIPTION:
@@ -73,11 +71,7 @@ DESCRIPTION:
 	) > $@
 
 LICENSE: $(SRC_DIRS)
-	for P in 'under.the.LGPL' 'under.the.GPL' 'terms.of.the.MIT.X11' 'under.the.BSD' 'Apache.2.0'; do \
-	  if ! grep -q "$$F" $(SOURCE_DIR)/LICENSE; then \
-	    exit 2; \
-	  fi; \
-	done
+	$(CHECK_LICENSE_FILES)
 	echo -e 'LPGL and GPL and MIT and BSD and ASL 2.0' > $@
 
 build: $(SRC_DIRS)
