@@ -2,13 +2,16 @@
 
 ## Overview
 
-This roll bundles the mono C# compiler and runtime.
+This roll bundles the mono C# and the F# compilers and runtimes.
 
 For more information about Mono please visit the official web page:
 
 - <a href="http://www.mono-project.com/" target="_blank">Mono</a> is an open
 source, cross-platform, implementation of C# and the CLR that is binary
 compatible with Microsoft.NET.
+
+For more information about F# please visit <a href="http://fsharp.org">the
+official project web page</a>.
 
 
 ## Requirements

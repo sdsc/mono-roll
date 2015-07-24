@@ -23,6 +23,11 @@ class Foo {
 }
 END
 
+open(OUT, ">$TESTFILE.fs");
+print OUT <<END;
+  printfn "Hello world"
+END
+
 # mono-common.xml
 if($appliance =~ /$installedOnAppliancesPattern/) {
   ok($isInstalled, 'mono installed');
@@ -31,7 +36,7 @@ if($appliance =~ /$installedOnAppliancesPattern/) {
 }
 SKIP: {
 
-  skip 'mono not installed', 7 if ! $isInstalled;
+  skip 'mono not installed', 10 if ! $isInstalled;
 
   $output = `module load mono; mcs -o $TESTFILE $TESTFILE.cs 2>&1`;
   ok($? == 0, 'mono C# compiler works');
@@ -42,6 +47,14 @@ SKIP: {
   $output = `module load mono; man mcs 2>&1`;
   ok($output =~ /Mono C#/, 'man works for mono');
   
+  $output = `module load mono; echo '"Hello";;' | fsharpi 2>&1`;
+  ok($output =~ /val it : string = "Hello"/, 'fsharp interpreter works');
+  $output = `module load mono; fsharpc -o $TESTFILE.exe $TESTFILE.fs 2>&1`;
+  ok($? == 0, 'F# compiler works');
+  $output = `module load mono; mono ./$TESTFILE.exe`;
+  ok($? == 0, 'compiled F# program runs');
+  like($output, qr/Hello world/, 'compiled F# program correct output');
+
   `/bin/ls /opt/modulefiles/compilers/mono/[0-9.]* 2>&1`;
   ok($? == 0, 'mono module installed');
   `/bin/ls /opt/modulefiles/compilers/mono/.version.[0-9.]* 2>&1`;

@@ -3,8 +3,8 @@
 <kickstart>
 
 <description>
-mono .NET development framework 
-www.mono-project.com
+mono .NET development framework - www.mono-project.com
+F# compiler - fsharp.org
 </description>
 
 <copyright>
@@ -15,5 +15,6 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 <package>sdsc-mono</package>
 <package>sdsc-mono-modules</package>
 <package>sdsc-mono-roll-test</package>
+<package>sdsc-fsharp</package>
 
 </kickstart>
