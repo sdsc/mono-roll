@@ -1,0 +1,23 @@
+--- configure.ac	2015-07-20 19:18:10.000000000 -0700
++++ patch-files/configure.ac	2015-07-20 19:16:08.000000000 -0700
+@@ -35,13 +35,13 @@
+ MONO_REQUIRED_VERSION=3.0
+ MONO_RECOMMENDED_VERSION=3.2
+ 
+-if ! $PKG_CONFIG --atleast-version=$MONO_REQUIRED_VERSION mono; then
+-	AC_MSG_ERROR("You need mono $MONO_REQUIRED_VERSION")
+-fi
+-
+-if ! $PKG_CONFIG --atleast-version=$MONO_RECOMMENDED_VERSION mono; then
+-	AC_MSG_WARN([Mono $MONO_RECOMMENDED_VERSION or higher is recommended, for better GC performance])
+-fi
++#if ! $PKG_CONFIG --atleast-version=$MONO_REQUIRED_VERSION mono; then
++#	AC_MSG_ERROR("You need mono $MONO_REQUIRED_VERSION")
++#fi
++
++#if ! $PKG_CONFIG --atleast-version=$MONO_RECOMMENDED_VERSION mono; then
++#	AC_MSG_WARN([Mono $MONO_RECOMMENDED_VERSION or higher is recommended, for better GC performance])
++#fi
+ 
+ # Checks for libraries.
+ 

@@ -63,6 +63,8 @@ include Rules.mk
 include $(SDSCDEVEL)/Pull.mk
 include $(SDSCDEVEL)/Rules.mk
 
+MONO_CACHE = $(REDHAT.ROOT)/cache/build-mono
+
 $(NAME).spec: DESCRIPTION LICENSE
 
 DESCRIPTION:
@@ -88,6 +90,10 @@ install::
 	  cd $(SOURCE_DIR); \
 	  $(MAKE) prefix=$(ROOT)/$(PKGROOT) install; \
 	)
+	mkdir -p -m 755 $(MONO_CACHE)
+	cp -r $(ROOT)/$(PKGROOT)/* $(MONO_CACHE)/
+	# Required for fsharp install
+	perl -pi -e 's#$(PKGROOT)#$(MONO_CACHE)#g' $(MONO_CACHE)/bin/{al,gacutil,sn,xbuild}
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::

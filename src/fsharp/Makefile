@@ -2,11 +2,12 @@
 #
 # @Copyright@
 # 
-# 				Rocks(tm)
+# 				Rocks(r)
 # 		         www.rocksclusters.org
-# 		        version 4.3 (Mars Hill)
+# 		         version 5.6 (Emerald Boa)
+# 		         version 6.1 (Emerald Boa)
 # 
-# Copyright (c) 2000 - 2011 The Regents of the University of California.
+# Copyright (c) 2000 - 2013 The Regents of the University of California.
 # All rights reserved.	
 # 
 # Redistribution and use in source and binary forms, with or without
@@ -24,7 +25,7 @@
 # 3. All advertising and press materials, printed or electronic, mentioning
 # features or use of this software must display the following acknowledgement: 
 # 
-# 	"This product includes software developed by the Rocks(tm)
+# 	"This product includes software developed by the Rocks(r)
 # 	Cluster Group at the San Diego Supercomputer Center at the
 # 	University of California, San Diego and its contributors."
 # 
@@ -53,9 +54,48 @@
 # 
 # @Copyright@
 #
+# $Log$
 
-# fsharp depends on mono
-SRCDIRS = `find . -maxdepth 1 -type d \
-	-not -name CVS \
-	-not -name . \
-        -not -name fsharp` fsharp
+REDHAT.ROOT = $(CURDIR)/../../
+
+-include $(ROCKSROOT)/etc/Rules.mk
+include Rules.mk
+include $(SDSCDEVEL)/Pull.mk
+include $(SDSCDEVEL)/Rules.mk
+
+MONO_CACHE = $(REDHAT.ROOT)/cache/build-mono
+
+$(NAME).spec: DESCRIPTION LICENSE
+
+DESCRIPTION:
+	( \
+	  $(DESCRIBE_PKG) \
+	) > $@
+
+LICENSE: $(SRC_DIRS)
+	$(CHECK_LICENSE_FILES)
+	echo Apache > $@
+
+build: $(SRC_DIRS)
+	patch $(SOURCE_DIR)/configure.ac patch-files/configure.ac.patch
+	( \
+	  cd $(SOURCE_DIR); \
+	  export PATH=$(MONO_CACHE)/bin:$$PATH; \
+	  ./autogen.sh --prefix=$(PKGROOT) --with-gacdir=$(MONO_CACHE)/lib/mono/gac; \
+	  $(MAKE); \
+	)
+	@echo "::: Package $(NAME) build complete :::"
+	
+install::
+	mkdir -p -m 755 $(ROOT)/$(PKGROOT)
+	$(PKGROOT_BIND_MOUNT)
+	( \
+	  cd $(SOURCE_DIR); \
+	  export PATH=$(MONO_CACHE)/bin:$$PATH; \
+	  $(MAKE) install; \
+	)
+	$(PKGROOT_BIND_UMOUNT)
+	@echo "::: Package $(NAME) install complete :::"
+
+clean::
+	rm -rf $(SOURCE_DIR) DESCRIPTION LICENSE

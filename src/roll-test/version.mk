@@ -1,6 +1,6 @@
 NAME       = sdsc-mono-roll-test
-VERSION    = 1
-RELEASE    = 2
+VERSION    = 2
+RELEASE    = 0
 PKGROOT    = /root/rolltests
 
 RPM.EXTRAS = AutoReq:No
