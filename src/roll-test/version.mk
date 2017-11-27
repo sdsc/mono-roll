@@ -1,6 +1,7 @@
 NAME       = sdsc-mono-roll-test
-VERSION    = 2
+VERSION    = 3
 RELEASE    = 0
 PKGROOT    = /root/rolltests
 
 RPM.EXTRAS = AutoReq:No
+RPM.FILES = $(PKGROOT)/chemistry.t
