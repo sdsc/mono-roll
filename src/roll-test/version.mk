@@ -4,4 +4,4 @@ RELEASE    = 0
 PKGROOT    = /root/rolltests
 
 RPM.EXTRAS = AutoReq:No
-RPM.FILES = $(PKGROOT)/chemistry.t
+RPM.FILES = $(PKGROOT)/mono.t
