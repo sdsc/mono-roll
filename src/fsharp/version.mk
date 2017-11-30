@@ -1,6 +1,6 @@
 NAME           = sdsc-fsharp
 VERSION        = 3.1.2.5
-RELEASE        = 0
+RELEASE        = 2
 # Although not required, the fsharp installation process assumes that it is
 # installed in the same location as mono itself.
 PKGROOT        = /opt/mono
@@ -16,3 +16,4 @@ SOURCE_DIR     = $(SOURCE_PKG:%.$(SOURCE_SUFFIX)=%)
 TAR_GZ_PKGS    = $(SOURCE_PKG)
 
 RPM.EXTRAS     = AutoReq:No
+RPM.PREFIX     = $(PKGROOT)

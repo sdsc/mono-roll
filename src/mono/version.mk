@@ -1,6 +1,6 @@
 NAME           = sdsc-mono
 VERSION        = 3.12.0
-RELEASE        = 1
+RELEASE        = 2
 PKGROOT        = /opt/mono
 
 SRC_SUBDIR     = mono
@@ -14,3 +14,4 @@ SOURCE_DIR     = $(SOURCE_PKG:%.$(SOURCE_SUFFIX)=%)
 TAR_BZ2_PKGS   = $(SOURCE_PKG)
 
 RPM.EXTRAS     = AutoReq:No
+RPM.PREFIX     = $(PKGROOT)
