@@ -1,23 +1,23 @@
---- configure.ac	2015-07-20 19:18:10.000000000 -0700
-+++ patch-files/configure.ac	2015-07-20 19:16:08.000000000 -0700
-@@ -35,13 +35,13 @@
- MONO_REQUIRED_VERSION=3.0
- MONO_RECOMMENDED_VERSION=3.2
+--- fsharp-4.1.29/configure.ac	2017-11-03 11:03:07.000000000 -0700
++++ patch-files/configure.ac	2017-12-09 14:04:45.719378504 -0800
+@@ -28,13 +28,13 @@
+ MONO_RECOMMENDED_VERSION=4.2
+ MONO_RECOMMENDED_REASON="as it is newer and already considered a stable version"
  
 -if ! $PKG_CONFIG --atleast-version=$MONO_REQUIRED_VERSION mono; then
 -	AC_MSG_ERROR("You need mono $MONO_REQUIRED_VERSION")
 -fi
 -
 -if ! $PKG_CONFIG --atleast-version=$MONO_RECOMMENDED_VERSION mono; then
--	AC_MSG_WARN([Mono $MONO_RECOMMENDED_VERSION or higher is recommended, for better GC performance])
+-	AC_MSG_WARN([Mono $MONO_RECOMMENDED_VERSION or higher is recommended, $MONO_RECOMMENDED_REASON])
 -fi
 +#if ! $PKG_CONFIG --atleast-version=$MONO_REQUIRED_VERSION mono; then
 +#	AC_MSG_ERROR("You need mono $MONO_REQUIRED_VERSION")
 +#fi
-+
++#
 +#if ! $PKG_CONFIG --atleast-version=$MONO_RECOMMENDED_VERSION mono; then
-+#	AC_MSG_WARN([Mono $MONO_RECOMMENDED_VERSION or higher is recommended, for better GC performance])
++#	AC_MSG_WARN([Mono $MONO_RECOMMENDED_VERSION or higher is recommended, $MONO_RECOMMENDED_REASON])
 +#fi
  
- # Checks for libraries.
- 
+ AC_ARG_WITH([gacdir],
+                     [  --with-gacdir=/path/to/gac      Specify the gac directory (ex: /usr/lib/mono/gac)],
