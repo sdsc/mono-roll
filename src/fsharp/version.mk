@@ -1,6 +1,6 @@
 NAME           = sdsc-fsharp
 VERSION        = 3.1.2.5
-RELEASE        = 2
+RELEASE        = 3
 # Although not required, the fsharp installation process assumes that it is
 # installed in the same location as mono itself.
 PKGROOT        = /opt/mono
